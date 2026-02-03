@@ -1,0 +1,105 @@
+body {
+    background-color:rgb(231, 231, 231);
+
+}
+
+h1 {
+    color:rgb(7, 118, 237);
+    position: absolute; top:200px; left:400px;
+    font-size: 50px;
+    font-weight: 900;
+    font-family:Arial;
+            
+}
+p {
+    position: absolute; top:270px; left:400px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.login {
+    position: absolute; top:270px; left:760px;
+    color: white;
+    background-color: rgb(7, 118, 237);
+    width: 330px;
+    height: 40px;
+    font-weight: 900;
+    font-family: Arial Black;
+    font-size: 20px;
+    border-radius: 7px;
+    z-index: 2;
+    border: none;
+    
+    
+}
+.singup {
+    position: absolute; top:370px; left:840px;
+    color: white;
+    background-color: rgba(5, 199, 5, 0.891);
+    width: 170px;
+    height: 40px;
+    font-weight: 900;
+    font-family: Arial Black;
+    font-size: 15px;
+    border-radius: 7px;
+    z-index: 2;
+    border: none;
+
+}
+
+.rectangle {
+    position: absolute; top:140px; left:750px;
+    width: 350px;
+    height: 300px;
+    background-color: white;
+    z-index: 1;
+}
+.line {
+    width: 300px;
+    height: 1px;
+    background-color: rgb(216, 216, 216);
+    position:absolute; top: 350px; left:775px;
+    z-index: 3;
+}
+
+.email {
+    position: absolute; top:160px; left:760px;
+    font-size:large;
+    width: 325px;
+    height: 40px;
+    border: 1px solid rgb(191, 191, 191);
+    z-index: 2;
+    border-radius: 5px;
+}
+
+.password {
+    position: absolute; top:210px; left:760px;
+    width: 325px;
+    height: 40px;
+    border-radius: 5px;
+    font-size:large;
+    border: 1px solid rgb(191, 191, 191);
+    z-index: 3;
+
+}
+
+.forgot {
+    position:absolute; top: 325px; left:865px;
+    z-index: 3;
+    color:blue;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+p1 {
+    position:absolute; top: 470px; left:754px;
+    z-index: 3;
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.create {
+    text-decoration: none;
+    color:black;
+    font-weight:900;
+
+}
