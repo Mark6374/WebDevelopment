@@ -1,0 +1,4 @@
+- Base class: Animal (name, age, color, methods: speak, info)
+- Child classes: Dog (adds breed, overrides speak, adds fetch)
+- Child classes: Cat (adds lives, overrides speak, adds climb)
+- Demonstrates inheritance, polymorphism, and method overriding.
