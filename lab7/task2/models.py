@@ -15,9 +15,15 @@ class Animal:
 
 
 class Dog(Animal):
+<<<<<<< HEAD
     def __init__(self, name, age, color):
         super().__init__(name, age, color)
         
+=======
+    def __init__(self, name, age, color, breed):
+        super().__init__(name, age, color)
+        self.breed = breed
+>>>>>>> d7150fd4090b8e0d0efa4378c05c1dd75ba3689b
     
     def speak(self):
         return "Woof!"
@@ -27,8 +33,14 @@ class Dog(Animal):
 
 
 class Cat(Animal):
+<<<<<<< HEAD
     def __init__(self, name, age, color):
         super().__init__(name, age, color)
+=======
+    def __init__(self, name, age, color, lives=9):
+        super().__init__(name, age, color)
+        self.lives = lives
+>>>>>>> d7150fd4090b8e0d0efa4378c05c1dd75ba3689b
     
     def speak(self):
         return "Meow!"

@@ -108,6 +108,7 @@ h1 {
     color: red;
     cursor: pointer;
     font-size: 16px;
+<<<<<<< HEAD
 }
 
 .delete-btn:hover {
@@ -136,3 +137,6 @@ h1 {
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
+=======
+}
+>>>>>>> d7150fd4090b8e0d0efa4378c05c1dd75ba3689b

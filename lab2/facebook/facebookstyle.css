@@ -102,6 +102,7 @@ p1 {
     color:black;
     font-weight:900;
 
+<<<<<<< HEAD
 }
 
 
@@ -173,4 +174,6 @@ body {
 
 .page {
     flex: 1;
+=======
+>>>>>>> d7150fd4090b8e0d0efa4378c05c1dd75ba3689b
 }

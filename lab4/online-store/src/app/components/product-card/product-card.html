@@ -1,0 +1,93 @@
+<div class="product-card">
+  <!-- Badge с категорией -->
+  <div class="product-badge">{{ product.category }}</div>
+
+  <!-- Main Image with Gallery Toggle -->
+  <div class="image-container" (click)="openGallery()">
+    <img [src]="product.images[currentImageIndex]" [alt]="product.name" class="product-image" loading="lazy">
+    <button class="gallery-btn" (click)="openGallery($event)">
+      <span class="gallery-icon">📸</span>
+      <span class="gallery-count">{{product.images.length}}</span>
+    </button>
+    
+    <!-- Навигация по изображениям на карточке -->
+    <div class="image-nav" *ngIf="product.images.length > 1" (click)="$event.stopPropagation()">
+      <button class="nav-dot" 
+              *ngFor="let image of product.images; let i = index"
+              [class.active]="i === currentImageIndex"
+              (click)="setImage(i, $event)">
+      </button>
+    </div>
+  </div>
+
+  <!-- Product Info -->
+  <div class="product-info">
+    <h3 class="product-title">{{ product.name }}</h3>
+    <p class="product-description">{{ product.description }}</p>
+    
+    <div class="product-rating">
+      <div class="stars">
+        <span class="star filled" *ngFor="let star of getStars()">★</span>
+        <span class="star half" *ngIf="hasHalfStar()">★</span>
+        <span class="star" *ngFor="let star of getEmptyStars()">★</span>
+      </div>
+      <span class="rating-value">{{ product.rating }}</span>
+      <span class="rating-count">({{ product.rating * 100 }} отзывов)</span>
+    </div>
+    
+    <div class="product-price">
+      <span class="price">{{ formatPrice(product.price) }} ₸</span>
+      <span class="price-hint">в рассрочку</span>
+    </div>
+    
+    <div class="product-actions">
+      <a [href]="product.link" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <span>🛒</span> На Kaspi.kz
+      </a>
+      
+      <div class="share-container">
+        <button class="btn btn-share" (click)="toggleShareOptions($event)" title="Поделиться">
+          <span>📤</span>
+        </button>
+        
+        <div class="share-options" *ngIf="showShareOptions" (click)="$event.stopPropagation()">
+          <button class="share-option whatsapp" (click)="shareOnWhatsApp()">
+            <span class="icon">📱</span>
+            <span>WhatsApp</span>
+          </button>
+          <button class="share-option telegram" (click)="shareOnTelegram()">
+            <span class="icon">✈️</span>
+            <span>Telegram</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image Gallery Modal - Вынесен за пределы карточки -->
+<div class="gallery-modal" *ngIf="showGallery" (click)="onOverlayClick($event)">
+  <div class="gallery-content" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeGallery($event)">×</button>
+    
+    <div class="gallery-main">
+      <button class="nav-btn prev" (click)="prevImage($event)" *ngIf="product.images.length > 1">‹</button>
+      <img [src]="product.images[currentImageIndex]" [alt]="product.name" (click)="$event.stopPropagation()">
+      <button class="nav-btn next" (click)="nextImage($event)" *ngIf="product.images.length > 1">›</button>
+    </div>
+    
+    <div class="gallery-thumbnails" *ngIf="product.images.length > 1" (click)="$event.stopPropagation()">
+      <img *ngFor="let image of product.images; let i = index" 
+           [src]="image" 
+           [alt]="product.name + ' ' + i"
+           [class.active]="i === currentImageIndex"
+           (click)="setImage(i, $event)"
+           loading="lazy">
+    </div>
+    
+    <div class="gallery-info">
+      <span>{{currentImageIndex + 1}} / {{product.images.length}}</span>
+      <span>{{product.name}}</span>
+    </div>
+  </div>
+</div>

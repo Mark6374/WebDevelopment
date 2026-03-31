@@ -1,0 +1,15 @@
+main {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f37d7d 0%, #ff8989 100%);
+  padding: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
